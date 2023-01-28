@@ -10,11 +10,14 @@ SELECT
       CAPACITY 학과별정원
   FROM TB_DEPARTMENT;
 
-
 --3. "국어국문학과" 에 다니는 여학생 중 현재 휴학중인 여학생을 찾아달라는 요청이
 --들어왔다. 누구인가? (국문학과의 '학과코드'는 학과 테이블(TB_DEPARTMENT)을 조회해서
 --찾아 내도록 하자)
 SELECT
-        DEPARTMENT_NO
-  FROM 
- 
+       STUDENT_NAME 
+  FROM TB_STUDENT S
+  JOIN TB_DEPARTMENT D 
+    ON (S.DEPARTMENT_NO = D.DEPARTMENT_NO)
+ WHERE ABSENCE_YN = 'Y'
+   AND D.DEPARTMENT_NAME = '국어국문학과'
+   AND SUBSTR(S.STUDENT_SSN, 8, 1) IN ('2', '4', '6');
