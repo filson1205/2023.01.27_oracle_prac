@@ -21,3 +21,6 @@ SELECT
  WHERE ABSENCE_YN = 'Y'
    AND D.DEPARTMENT_NAME = '국어국문학과'
    AND SUBSTR(S.STUDENT_SSN, 8, 1) IN ('2', '4', '6');
+   
+--4. 도서관에서 대출 도서 장기 연체자 들을 찾아 이름을 게시하고자 핚다. 그 대상자들의
+--학번이 다음과 같을 때 대상자들을 찾는 적젃핚 SQL 구문을 작성하시오.
